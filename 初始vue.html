@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>初识vue</title>
+    <!-- 引入vue -->
+    <script type ="text/javascript" src ="../js/vue.js"></script>
+</head>
+<body>
+    <!-- 准备好一个容器 -->
+    <div id = "root">
+        <h3>hello,{{address}}</h3>
+        <h3>hello,{{address.toUpperCase()}}</h3>
+    </div>
+
+    <script type = "text/javascript">
+        Vue.config.productionTip = false //阻止 vue 在启动时生成生产提示
+
+        // 创建vue实例
+        // 将容器中变化的数据交给vue实例保管
+        new Vue({
+            //el用于指定当前vue实例为哪个容器服务，值通常为css选择器字符串
+            el:'#root', 
+            // 数据供el指定的容器使用,值我们暂时先写成一个对象
+            // 一旦data中的数据发生改变，页面中用到data的地方也会自动更新
+            data:{
+                address:'beijing'
+            }
+        }) 
+
+    </script>
+</body>
+</html>
